@@ -10,7 +10,7 @@ import time
 
 time.sleep(0.5)
 # Image path
-image = PIL.Image.open("/home/marat/tray/usb-drive.png")
+image = PIL.Image.open("/home/user/tray/usb-drive.png")
 # Reading context of all udev defined devices
 context = pyudev.Context()
 # Pattern for sd or sr devices
