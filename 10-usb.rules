@@ -1,0 +1,9 @@
+# This file must be placed in /etc/udev/rules/
+# chanege USER marat and PATH to the scripts to appropriate ones
+# After putting the file in /etc/udev/rules/ directory RUN the following command
+# sudo udevadm control --reload-rules && sudo udevadm trigger
+
+# Rule for attachement of USB flash drive
+ACTION=="add", KERNEL=="sd*[!0-9]|sr*", SUBSYSTEMS=="usb", ENV{DISPLAY}=":0" ENV{XAUTHORITY}="/home/marat/.Xauthority" RUN+="/usr/bin/sudo -u marat /home/marat/tray/attach-usb.sh"
+# Rule for detachement of USB flash drive
+ACTION=="remove", KERNEL=="sd*[!0-9]|sr*", SUBSYSTEMS=="usb", ENV{DISPLAY}=":0" ENV{XAUTHORITY}="/home/marat/.Xauthority" RUN+="/usr/bin/sudo -u marat /home/marat/tray/remove-usb.sh"
