@@ -2,7 +2,7 @@
 # SHELL script works at USB flash drive detachement
 
 # Path to TRAY python script is defined here
-trayPath="/home/marat/tray/tray.py"
+trayPath="/home/user/tray/tray.py"
 
 # Chech if TRAY proccess already running:
 trayPID=$(ps -ef | grep tray.py | grep -v grep | awk -v user=$domainUser '$1 == user {print $2}' | tail -n 1)
